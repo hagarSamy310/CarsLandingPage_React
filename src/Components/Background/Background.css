@@ -19,7 +19,6 @@
     opacity: 1;
   }
 }
-
 .fade-in {
   animation: fadeIn 500ms ease-in-out;
 }

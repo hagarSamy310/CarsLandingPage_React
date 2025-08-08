@@ -1,71 +1,147 @@
-.hero{
-  margin: 0px 120px;
+/* =========================
+  Hero Section Styles
+  ========================= */
+
+.hero {
+  margin: 0px 0px;
   margin-top: 270px;
+  z-index: 1;
+  position: relative;
+  min-height: 350px; /* Adjust as needed */
 }
 
-.hero-txt{
+/* =========================
+  Hero Text Styles
+  ========================= */
+
+.hero-txt {
   font-size: 40px;
   font-weight: 500;
+  font-family: monospace;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.5);
   width: fit-content;
+  position: relative;
+  z-index: 1;
+  padding: 10px 20px;
+  /* border-radius: 10px; */
 }
 
-.hero-explore{
+/* =========================
+  Typewriter Cursor Styles
+  ========================= */
+
+.cursor {
+  display: inline-block;
+  background-color: transparent;
+  margin-left: 3px;
+  width: 2px;
+  height: 1em;
+  animation: blink 1s infinite;
+  vertical-align: text-top;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.typewriter-line {
+  min-height: 1.2em;
+}
+
+/* =========================
+  Explore Button Styles
+  ========================= */
+
+.hero-explore {
   display: flex;
   align-items: center;
-  gap: 50px;
-  margin-top: 70px;
-  width: fit-content;
-  padding: 5px 8px;
-  padding-left: 30px;
+  gap: 18px;
+  background-color: rgba(0, 0, 0, 0.8);
   border-radius: 60px;
+  padding: 3px 12px;
   cursor: pointer;
-  background-color: #fff;
+  margin: 0;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
-.hero-explore p{
+.hero-explore p {
   font-size: 20px;
   font-weight: 500;
-  color: #292929;
+  color: #fff;
 }
 
-.hero-dot-play{
-  margin-top: 120px;
+/* =========================
+  Dot and Play Section Styles
+  ========================= */
+
+.hero-dot-play {
+  flex: 1;
   display: flex;
-  justify-content: space-between;
-  
+  justify-content: center;
+  align-items: center;
+  margin: 0px 20px;
 }
 
-.hero-dots{
+.hero-dots {
+  margin-left: 80px;
   display: flex;
   align-items: center;
   gap: 23px;
   list-style: none;
 }
 
-.hero-dot{
+.hero-dot {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: rgb(29, 29, 29);
   cursor: pointer;
 }
 
-.hero-dot.orange{
-  background-color: orangered;
+.hero-dot.orange {
+  background-color: #fff;
 }
 
-.hero-play{
-  margin-top: 50px;
+.hero-play {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 12px;
+  cursor: pointer;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
-
-
-.hero-play p{
+.hero-play p {
   font-size: 19px;
+  font-weight: 600;
   color: #fff;
+}
+
+/* =========================
+  Z-Index Consistency
+  ========================= */
+
+.hero,
+.hero * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+  Bottom Bar Styles
+  ========================= */
+
+.hero-bottom-bar {
+  position: absolute;
+  left: 0;
+  bottom: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  padding: 0 60px;
+  box-sizing: border-box;
 }

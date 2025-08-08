@@ -1,9 +1,16 @@
 import "./Navbar.css";
 export const Navbar = () => {
+	const logoText = "Luxury Cars";
 	return (
 		<div className="nav">
 			<div className="nav-logo">
-				<h1>Luxury Cars</h1>
+				<h1 className="animated-logo">
+					{logoText.split("").map((letter, index) => (
+						<span key={index} className="letter">
+							{letter === " " ? "\u00A0" : letter}
+						</span>
+					))}
+				</h1>
 			</div>
 			<ul className="nav-menu">
 				<li>

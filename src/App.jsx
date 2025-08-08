@@ -7,36 +7,38 @@ import { Hero } from "./Components/Hero/Hero.jsx";
 // import { Contact } from "./Components/Contact/Contact.jsx"
 
 export const App = () => {
-	let heroData = [
-		{ text1: "Dive into", text2: "what you love" },
-		{ text1: "Indulge", text2: "your passions" },
-		{ text1: "Give in to ", text2: "your desires" },
-	];
+  let heroData = [
+    
+    
+    { text1: "Start ", text2: "Your Journey" },
+    { text1: "Drive ", text2: "Your Dreams" },
+    { text1: "Explore ", text2: "The World" },
+  ];
 
-	const [heroCount, setHeroCount] = useState(0);
-	const [playStatus, setPlayStatus] = useState(false);
+  const [heroCount, setHeroCount] = useState(0);
+  const [playStatus, setPlayStatus] = useState(false);
 
-	useEffect (() => {
-		setInterval(() => {
-			setHeroCount((count) => {return count === 2 ? 0 : count + 1 });  
-			
-		}, 3000);
-	}, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeroCount((count) => {
+        return count === 2 ? 0 : count + 1;
+      });  
+    }, 3000); 
 
-	return (
-		<div>
-			<Background playStatus={playStatus} heroCount={heroCount} />
-			<Navbar />
-			<Hero
-				setPlayStatus={setPlayStatus}
-				heroData={heroData[heroCount]}
-				heroCount={heroCount}
-				setHeroCount={setHeroCount}
-				playStatus={playStatus}
-			/>
-			{/* <Explore />
-			<About />
-			<Contact /> */}
-		</div>
-	);
+    return () => clearInterval(interval); 
+  }, []);
+
+  return (
+    <div>
+      <Background playStatus={playStatus} heroCount={heroCount} />
+      <Navbar />
+      <Hero
+        setPlayStatus={setPlayStatus}
+        heroData={heroData[heroCount]}
+        heroCount={heroCount}
+        setHeroCount={setHeroCount}
+        playStatus={playStatus}
+      />
+    </div>
+  );
 };
