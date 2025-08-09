@@ -3,11 +3,11 @@
   ========================= */
 
 .hero {
-  margin: 0px 0px;
-  margin-top: 270px;
-  z-index: 1;
-  position: relative;
-  min-height: 350px; /* Adjust as needed */
+	margin: 0px 0px;
+	margin-top: 200px;
+	z-index: 1;
+	position: relative;
+	min-height: 350px;
 }
 
 /* =========================
@@ -15,16 +15,16 @@
   ========================= */
 
 .hero-txt {
-  font-size: 40px;
-  font-weight: 500;
-  font-family: monospace;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: fit-content;
-  position: relative;
-  z-index: 1;
-  padding: 10px 20px;
-  /* border-radius: 10px; */
+	font-size: 40px;
+	font-weight: 500;
+	font-family: monospace;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: fit-content;
+	position: relative;
+	z-index: 1;
+	padding: 10px 20px;
+	margin-left: 450px;
 }
 
 /* =========================
@@ -32,22 +32,28 @@
   ========================= */
 
 .cursor {
-  display: inline-block;
-  background-color: transparent;
-  margin-left: 3px;
-  width: 2px;
-  height: 1em;
-  animation: blink 1s infinite;
-  vertical-align: text-top;
+	display: inline-block;
+	background-color: transparent;
+	margin-left: 3px;
+	width: 2px;
+	height: 1em;
+	animation: blink 1s infinite;
+	vertical-align: text-top;
 }
 
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+	0%,
+	50% {
+		opacity: 1;
+	}
+	51%,
+	100% {
+		opacity: 0;
+	}
 }
 
 .typewriter-line {
-  min-height: 1.2em;
+	min-height: 1.2em;
 }
 
 /* =========================
@@ -55,21 +61,21 @@
   ========================= */
 
 .hero-explore {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 60px;
-  padding: 3px 12px;
-  cursor: pointer;
-  margin: 0;
-  flex-shrink: 0; /* Prevent shrinking */
+	display: flex;
+	align-items: center;
+	gap: 18px;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-radius: 60px;
+	padding: 3px 12px;
+	cursor: pointer;
+	margin: 0;
+	flex-shrink: 0; /* Prevent shrinking */
 }
 
 .hero-explore p {
-  font-size: 20px;
-  font-weight: 500;
-  color: #fff;
+	font-size: 20px;
+	font-weight: 500;
+	color: #fff;
 }
 
 /* =========================
@@ -77,45 +83,45 @@
   ========================= */
 
 .hero-dot-play {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0px 20px;
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0px 20px;
 }
 
 .hero-dots {
-  margin-left: 80px;
-  display: flex;
-  align-items: center;
-  gap: 23px;
-  list-style: none;
+	margin-left: 90px;
+	display: flex;
+	align-items: center;
+	gap: 23px;
+	list-style: none;
 }
 
 .hero-dot {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: rgb(29, 29, 29);
-  cursor: pointer;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background-color: rgb(29, 29, 29);
+	cursor: pointer;
 }
 
 .hero-dot.orange {
-  background-color: #fff;
+	background-color: #fff;
 }
 
 .hero-play {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  cursor: pointer;
-  flex-shrink: 0; /* Prevent shrinking */
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	cursor: pointer;
+	flex-shrink: 0; /* Prevent shrinking */
 }
 
 .hero-play p {
-  font-size: 19px;
-  font-weight: 600;
-  color: #fff;
+	font-size: 19px;
+	font-weight: 600;
+	color: #fff;
 }
 
 /* =========================
@@ -124,8 +130,8 @@
 
 .hero,
 .hero * {
-  position: relative;
-  z-index: 1;
+	position: relative;
+	z-index: 1;
 }
 
 /* =========================
@@ -133,15 +139,179 @@
   ========================= */
 
 .hero-bottom-bar {
-  position: absolute;
-  left: 0;
-  bottom: 40px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 2;
-  padding: 0 60px;
-  box-sizing: border-box;
+	position: absolute;
+	left: 0;
+	top: 340px;
+	bottom: 0px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 2;
+	padding: 0 60px;
+	box-sizing: border-box;
 }
+
+/* Media Queries */
+@media (max-width: 1024px) {
+	.hero {
+		min-height: 200px;
+		margin-top: 150px;
+	}
+	.hero-txt {
+		font-size: 30px;
+		margin-left: 380px;
+	}
+	.hero-bottom-bar {
+		top: 175px;
+	}
+  .hero-explore{
+    padding: 4px 12px;
+  }
+
+	.hero-explore p {
+		font-size: 18px;
+	}
+
+	.hero-play p {
+		font-size: 18px;
+	}
+
+	.hero-dot {
+		width: 12px;
+		height: 12px;
+	}
+	.hero-play img {
+		width: 60px;
+		height: 60px;
+	}
+}
+
+@media (max-width: 768px) {
+	.hero-txt {
+		font-size: 30px;
+		margin-left: 280px;
+	}
+
+	.hero-explore p {
+		font-size: 16px;
+	}
+	.hero-explore {
+		padding: 2px 8px;
+	}
+
+	.hero-explore img {
+		width: 40px;
+		height: 40px;
+	}
+
+	.hero-play p {
+		font-size: 16px;
+	}
+
+	.hero-dot-play {
+		margin: 0;
+	}
+
+	.hero-dot {
+		width: 10px;
+		height: 10px;
+	}
+	.hero-play img {
+		width: 50px;
+		height: 50px;
+	}
+}
+@media (max-width: 576px) {
+	.hero-txt {
+		font-size: 28px;
+		margin-left: 200px;
+	}
+	.hero-explore img {
+		width: 35px;
+		height: 35px;
+	}
+	.hero-bottom-bar {
+		top: 200px;
+		padding: 0 20px;
+		gap: 22px;
+	}
+	.hero-play img {
+		width: 36px;
+		height: 36px;
+	}
+
+	.hero-explore p {
+		font-size: 14px;
+	}
+	.hero-explore {
+		padding: 4px 8px;
+		margin-left: 40px;
+	}
+	.hero-dots {
+		margin-left: 120px;
+	}
+	.hero-dot {
+		width: 9px;
+		height: 9px;
+	}
+}
+
+@media (max-width: 480px) {
+	.hero-txt {
+		font-size: 26px;
+		margin-left: 150px;
+	}
+	.hero-bottom-bar {
+		top: 200px;
+		padding: 4px 18px;
+		gap: 4px;
+	}
+
+	.hero-explore p {
+		font-size: 14px;
+	}
+	.hero-explore img {
+		width: 26px;
+		height: 26px;
+	}
+	.hero-explore {
+		padding: 3px 4px;
+	}
+	.hero-dots {
+		margin-left: 80px;
+	}
+
+	.hero-dot {
+		width: 8px;
+		height: 8px;
+	}
+}
+@media (max-width: 360px) {
+  .hero-txt {
+    font-size: 24px;
+    margin-left: 100px;
+  }
+  .hero-bottom-bar {
+    top: 278px;
+    padding: 4px 10px;
+    gap: 2px;
+  }
+  .hero-explore p {
+    font-size: 12px;
+  }
+  .hero-explore img {
+    width: 22px;
+    height: 22px;
+  }
+  .hero-play p {
+    font-size: 14px;
+  }
+  .hero-play img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+

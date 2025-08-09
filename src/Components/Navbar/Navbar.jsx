@@ -1,5 +1,7 @@
+import React, { useState } from "react";
 import "./Navbar.css";
 export const Navbar = () => {
+	const [menuOpen, setMenuOpen] = useState(false);
 	const logoText = "Luxury Cars";
 	return (
 		<div className="nav">
@@ -12,20 +14,65 @@ export const Navbar = () => {
 					))}
 				</h1>
 			</div>
-			<ul className="nav-menu">
+			<ul className={`nav-menu${menuOpen ? " open" : ""}`}>
 				<li>
-					<a href="#home">Home</a>
+					<a href="#home" onClick={() => setMenuOpen(false)}>
+						Home
+					</a>
 				</li>
 				<li>
-					<a href="#explore">Explore</a>
+					<a href="#explore" onClick={() => setMenuOpen(false)}>
+						Explore
+					</a>
 				</li>
 				<li>
-					<a href="#about">About</a>
+					<a href="#about" onClick={() => setMenuOpen(false)}>
+						About
+					</a>
 				</li>
 				<li className="nav-contact">
-					<a href="#contact">Contact</a>
+					<a href="#contact" onClick={() => setMenuOpen(false)}>
+						Contact
+					</a>
 				</li>
 			</ul>
+			<div
+				className={`hamburger${menuOpen ? " active" : ""}`}
+				onClick={() => {
+					if (!menuOpen) setMenuOpen(true);
+				}}
+			>
+				<span></span>
+				<span></span>
+				<span></span>
+				{menuOpen && (
+					<button
+						className="close-btn"
+						aria-label="Close menu"
+						onClick={(e) => {
+							e.stopPropagation();
+							setMenuOpen(false);
+						}}
+					>
+						<svg viewBox="0 0 22 22" fill="none">
+							<line
+								x1="3"
+								y1="3"
+								x2="19"
+								y2="19"
+								stroke="currentColor"
+							/>
+							<line
+								x1="19"
+								y1="3"
+								x2="3"
+								y2="19"
+								stroke="currentColor"
+							/>
+						</svg>
+					</button>
+				)}
+			</div>
 		</div>
 	);
 };
