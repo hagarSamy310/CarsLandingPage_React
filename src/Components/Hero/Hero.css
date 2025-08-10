@@ -261,17 +261,21 @@
 	}
 }
 @media (max-width: 360px) {
+	.hero {
+		min-height: 180px;
+		margin-top: 120px;
+	}
 	.hero-txt {
-		font-size: 24px;
+		font-size: 22px;
 		margin-left: 100px;
 	}
 	.hero-bottom-bar {
-		top: 278px;
+		top: 210px;
 		padding: 4px 10px;
 		gap: 2px;
 	}
 	.hero-explore p {
-		font-size: 12px;
+		display: none;
 	}
 	.hero-explore img {
 		width: 22px;
