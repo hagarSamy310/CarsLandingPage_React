@@ -1,7 +1,3 @@
-/* =========================
-  Hero Section Styles
-  ========================= */
-
 .hero {
 	margin: 0px 0px;
 	margin-top: 200px;
@@ -9,10 +5,6 @@
 	position: relative;
 	min-height: 350px;
 }
-
-/* =========================
-  Hero Text Styles
-  ========================= */
 
 .hero-txt {
 	font-size: 40px;
@@ -26,10 +18,6 @@
 	padding: 10px 20px;
 	margin-left: 450px;
 }
-
-/* =========================
-  Typewriter Cursor Styles
-  ========================= */
 
 .cursor {
 	display: inline-block;
@@ -56,10 +44,6 @@
 	min-height: 1.2em;
 }
 
-/* =========================
-  Explore Button Styles
-  ========================= */
-
 .hero-explore {
 	display: flex;
 	align-items: center;
@@ -69,7 +53,7 @@
 	padding: 3px 12px;
 	cursor: pointer;
 	margin: 0;
-	flex-shrink: 0; /* Prevent shrinking */
+	flex-shrink: 0;
 }
 
 .hero-explore p {
@@ -77,10 +61,6 @@
 	font-weight: 500;
 	color: #fff;
 }
-
-/* =========================
-  Dot and Play Section Styles
-  ========================= */
 
 .hero-dot-play {
 	flex: 1;
@@ -115,7 +95,7 @@
 	align-items: center;
 	gap: 12px;
 	cursor: pointer;
-	flex-shrink: 0; /* Prevent shrinking */
+	flex-shrink: 0;
 }
 
 .hero-play p {
@@ -124,19 +104,11 @@
 	color: #fff;
 }
 
-/* =========================
-  Z-Index Consistency
-  ========================= */
-
 .hero,
 .hero * {
 	position: relative;
 	z-index: 1;
 }
-
-/* =========================
-  Bottom Bar Styles
-  ========================= */
 
 .hero-bottom-bar {
 	position: absolute;
@@ -166,9 +138,9 @@
 	.hero-bottom-bar {
 		top: 175px;
 	}
-  .hero-explore{
-    padding: 4px 12px;
-  }
+	.hero-explore {
+		padding: 4px 12px;
+	}
 
 	.hero-explore p {
 		font-size: 18px;
@@ -289,29 +261,27 @@
 	}
 }
 @media (max-width: 360px) {
-  .hero-txt {
-    font-size: 24px;
-    margin-left: 100px;
-  }
-  .hero-bottom-bar {
-    top: 278px;
-    padding: 4px 10px;
-    gap: 2px;
-  }
-  .hero-explore p {
-    font-size: 12px;
-  }
-  .hero-explore img {
-    width: 22px;
-    height: 22px;
-  }
-  .hero-play p {
-    font-size: 14px;
-  }
-  .hero-play img {
-    width: 30px;
-    height: 30px;
-  }
+	.hero-txt {
+		font-size: 24px;
+		margin-left: 100px;
+	}
+	.hero-bottom-bar {
+		top: 278px;
+		padding: 4px 10px;
+		gap: 2px;
+	}
+	.hero-explore p {
+		font-size: 12px;
+	}
+	.hero-explore img {
+		width: 22px;
+		height: 22px;
+	}
+	.hero-play p {
+		font-size: 14px;
+	}
+	.hero-play img {
+		width: 30px;
+		height: 30px;
+	}
 }
-
-

@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Background } from "./Components/Background/Background.jsx";
 import { Navbar } from "./Components/Navbar/Navbar.jsx";
 import { Hero } from "./Components/Hero/Hero.jsx";
-// import { Explore } from "./Components/Explore/Explore.jsx";
-// import { About } from "./Components/About/About.jsx";
-// import { Contact } from "./Components/Contact/Contact.jsx"
+import { About } from "./Components/About/About.jsx";
+import { Explore } from "./Components/Explore/Explore.jsx";
+import { Contact } from "./Components/Contact/Contact.jsx"
+import { Footer } from "./Components/Footer/Footer.jsx";
 
 export const App = () => {
   let heroData = [
@@ -39,6 +40,10 @@ export const App = () => {
         setHeroCount={setHeroCount}
         playStatus={playStatus}
       />
+      <About />
+      <Explore />
+      <Contact /> 
+      <Footer />
     </div>
   );
 };

@@ -1,93 +1,108 @@
-import React, { useState, useEffect } from 'react';
-import './Hero.css';
-import arrow_btn from '../../Assets/arrow_btn.png';
-import play_icon from '../../Assets/play_icon.png';
-import pause_icon from '../../Assets/pause_icon.png';
+import React, { useState, useEffect } from "react";
+import "./Hero.css";
+import arrow_btn from "../../Assets/arrow_btn.png";
+import play_icon from "../../Assets/play_icon.png";
+import pause_icon from "../../Assets/pause_icon.png";
 
-export const Hero = ({ heroData, heroCount, setHeroCount, setPlayStatus, playStatus }) => {
-  const [displayText1, setDisplayText1] = useState('');
-  const [displayText2, setDisplayText2] = useState('');
-  const [currentLine, setCurrentLine] = useState(1);
-  const [showCursor, setShowCursor] = useState(true);
+export const Hero = ({
+	heroData,
+	heroCount,
+	setHeroCount,
+	setPlayStatus,
+	playStatus,
+}) => {
+	const [displayText1, setDisplayText1] = useState("");
+	const [displayText2, setDisplayText2] = useState("");
+	const [currentLine, setCurrentLine] = useState(1);
+	const [showCursor, setShowCursor] = useState(true);
 
-  useEffect(() => {
-    setDisplayText1('');
-    setDisplayText2('');
-    setCurrentLine(1);
-    setShowCursor(true);
+	useEffect(() => {
+		setDisplayText1("");
+		setDisplayText2("");
+		setCurrentLine(1);
+		setShowCursor(true);
 
-    const text1 = heroData.text1;
-    const text2 = heroData.text2;
-    
-    // Clear any existing timeouts
-    const timeouts = [];
-    
-    // Type first line
-    const typeText1 = () => {
-      for (let i = 0; i <= text1.length; i++) {
-        timeouts.push(setTimeout(() => {
-          setDisplayText1(text1.substring(0, i));
-          if (i === text1.length) {
-            // Start typing second line after small pause
-            setCurrentLine(2);
-            typeText2();
-          }
-        }, i * 80)); 
-      }
-    };
+		const text1 = heroData.text1;
+		const text2 = heroData.text2;
 
-    // Type second line
-    const typeText2 = () => {
-      for (let j = 0; j <= text2.length; j++) {
-        timeouts.push(setTimeout(() => {
-          setDisplayText2(text2.substring(0, j));
-          if (j === text2.length) {
-            // Hide cursor when done
-            setTimeout(() => setShowCursor(false), 200);
-          }
-        }, (text1.length * 80) + 300 + (j * 80))); // Start after first line + pause
-      }
-    };
+		const timeouts = [];
 
-    // Start typing immediately when text changes
-    typeText1();
+		const typeText1 = () => {
+			for (let i = 0; i <= text1.length; i++) {
+				timeouts.push(
+					setTimeout(() => {
+						setDisplayText1(text1.substring(0, i));
+						if (i === text1.length) {
+							setCurrentLine(2);
+							typeText2();
+						}
+					}, i * 80)
+				);
+			}
+		};
 
-    // Cleanup function to clear timeouts if component unmounts or heroCount changes
-    return () => {
-      timeouts.forEach(timeout => clearTimeout(timeout));
-    };
-  }, [heroCount]); 
+		const typeText2 = () => {
+			for (let j = 0; j <= text2.length; j++) {
+				timeouts.push(
+					setTimeout(() => {
+						setDisplayText2(text2.substring(0, j));
+						if (j === text2.length) {
+							setTimeout(() => setShowCursor(false), 200);
+						}
+					}, text1.length * 80 + 300 + j * 80)
+				);
+			}
+		};
 
-  return (
-    <div className="hero">
-      <div className="hero-txt">
-        <p className="typewriter-line">
-          {displayText1}
-          {showCursor && currentLine === 1 && <span className="cursor">|</span>}
-        </p>
-        <p className="typewriter-line">
-          {displayText2}
-          {showCursor && currentLine === 2 && <span className="cursor">|</span>}
-        </p>
-      </div>
+		typeText1();
 
-      <div className="hero-bottom-bar">
-        <div className="hero-play">
-          <img onClick={() => setPlayStatus(!playStatus)} src={playStatus ? pause_icon : play_icon} alt="" />
-        </div>
-        <div className="hero-dot-play">
-          <ul className="hero-dots">
-            <li onClick={() => setHeroCount(0)} className={heroCount === 0 ? "hero-dot orange" : "hero-dot"}></li>
-            <li onClick={() => setHeroCount(1)} className={heroCount === 1 ? "hero-dot orange" : "hero-dot"}></li>
-            <li onClick={() => setHeroCount(2)} className={heroCount === 2 ? "hero-dot orange" : "hero-dot"}></li>   
-          </ul>
-        </div>
-        <div className="hero-explore">
-          <p>Explore the features</p>
-          <img src={arrow_btn} alt="forward button" />
-        </div>
-      </div>
-    </div>
-  );
+		return () => {
+			timeouts.forEach((timeout) => clearTimeout(timeout));
+		};
+	}, [heroCount]);
+
+	return (
+		<div className="hero" id="hero">
+			<div className="hero-txt">
+				<p className="typewriter-line">
+					{displayText1}
+					{showCursor && currentLine === 1 && <span className="cursor">|</span>}
+				</p>
+				<p className="typewriter-line">
+					{displayText2}
+					{showCursor && currentLine === 2 && <span className="cursor">|</span>}
+				</p>
+			</div>
+
+			<div className="hero-bottom-bar">
+				<div className="hero-play">
+					<img
+						onClick={() => setPlayStatus(!playStatus)}
+						src={playStatus ? pause_icon : play_icon}
+						alt=""
+					/>
+				</div>
+				<div className="hero-dot-play">
+					<ul className="hero-dots">
+						<li
+							onClick={() => setHeroCount(0)}
+							className={heroCount === 0 ? "hero-dot orange" : "hero-dot"}
+						></li>
+						<li
+							onClick={() => setHeroCount(1)}
+							className={heroCount === 1 ? "hero-dot orange" : "hero-dot"}
+						></li>
+						<li
+							onClick={() => setHeroCount(2)}
+							className={heroCount === 2 ? "hero-dot orange" : "hero-dot"}
+						></li>
+					</ul>
+				</div>
+				<div className="hero-explore">
+					<p>Explore the features</p>
+					<img src={arrow_btn} alt="forward button" />
+				</div>
+			</div>
+		</div>
+	);
 };
-
